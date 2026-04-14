@@ -20,7 +20,7 @@ const EXPERIENCES: Experience[] = [
   {
     role: "Full Stack Developer Intern",
     company: "AccessGlobal Technology",
-    companyUrl: "https://accessglobal.in",
+    companyUrl: "https://agtglobal.in",
     location: "Gujarat, India",
     period: "May '25 — June '25",
     type: "Internship",

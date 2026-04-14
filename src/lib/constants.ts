@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   email: "mevawalavraj@gmail.com",
   phone: "+91 94296 81488",
   location: "Gujarat, India",
-  linkedin: "https://linkedin.com/in/vraj-mevawala",
+  linkedin: "https://www.linkedin.com/in/vraj-mevawala-65854a284/",
   github: "https://github.com/vrajmevawala",
   avatar: "https://avatars.githubusercontent.com/u/147795720?v=4",
   resumeUrl: "/resume.pdf",
@@ -56,21 +56,39 @@ export const SKILL_CATEGORIES = [
 
 export const PROJECTS = [
   {
-    title: "FleetFlow",
+    title: "Chatty",
     description:
-      "A production-grade fleet management system with vehicle tracking, driver management, trip lifecycle, maintenance scheduling, expense tracking, analytics dashboard, and compliance monitoring — all with role-based access control.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma", "Tailwind CSS", "JWT"],
-    impact: "Full RBAC with 4 roles, analytics dashboard with ROI metrics, and automated maintenance workflows",
-    github: "https://github.com/vrajmevawala/odoo-x-vidyapith",
+      "Developed a real-time messaging platform with live user-presence tracking using Socket.io event-driven architecture. Secured routes with JWT + Bcrypt authentication; integrated Cloudinary API for profile and in-chat image uploads. Delivered a fully responsive UI with 30+ theme presets using Tailwind CSS and DaisyUI.",
+    tech: ["MERN", "Socket.io", "Tailwind CSS", "Zustand", "JWT", "Cloudinary", "DaisyUI"],
+    impact: "Live deployed real-time messaging with WebSocket integration & custom themes",
+    github: "https://github.com/vrajmevawala/ChatApp",
+    live: "https://chatty-7u8k.onrender.com/",
+  },
+  {
+    title: "CodeSage",
+    description:
+      "Implemented automated GitHub PR reviews with scoring across performance and code quality. Developed a real-time dashboard with complexity metrics and interactive diff previews. Engineered a hallucination-resistant AI system using AST data with LLM prompts. Designed scalable architecture with Fastify APIs, Redis queues, and worker pipeline.",
+    tech: ["Next.js", "Fastify", "TypeScript", "PostgreSQL", "Redis", "Tailwind CSS", "Tree-sitter"],
+    impact: "Automated GitHub PR reviews with AI scoring & AST-based hallucination resistance",
+    github: "https://github.com/vrajmevawala/CodeSage",
+    live: "https://codesage-web.onrender.com/",
+  },
+  {
+    title: "KhedutMitra",
+    description:
+      "A sophisticated full-stack rural intelligence platform for farmer-centric risk monitoring (Farmer Vulnerability Index), weather-aware advisory delivery, and automated communication via WhatsApp/Telegram AI bots. Features heatmaps and real-time predictive analytics.",
+    tech: ["Node.js", "Express", "React", "PostgreSQL", "Leaflet","N8N workflow", "Twilio", "Groq", "Llama-3"],
+    impact: "Computed vulnerability scoring & automated advisory delivery via WhatsApp/Telegram",
+    github: "https://github.com/vrajmevawala/GenAI-Rural_Intelligence_Platform",
     live: "",
   },
   {
-    title: "StackIt",
+    title: "EduVerse",
     description:
-      "A modern Q&A forum platform with rich text editing, voting system, tag-based categorization, advanced search & filtering, admin panel, and real-time notifications via WebSockets.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma", "Socket.io", "JWT"],
-    impact: "Real-time notifications with Socket.io & full CRUD with voting and moderation system",
-    github: "https://github.com/vrajmevawala/StackIt-ODOO",
+      "Engineered a competitive exam platform supporting concurrent users with timed contests, live leaderboards, and a real-time AI assistant for guidance via WebSocket. Built a secure anti-malpractice environment with tab-switch detection and focus-loss logging.",
+    tech: ["PERN (Prisma)", "Socket.io", "Tailwind CSS", "Zustand", "JWT"],
+    impact: "Real-time contests with concurrent users & AI-powered exam guidance",
+    github: "https://github.com/vrajmevawala/eduVerse",
     live: "",
   },
   {
@@ -83,30 +101,12 @@ export const PROJECTS = [
     live: "",
   },
   {
-    title: "Chatty",
+    title: "FleetFlow",
     description:
-      "A real-time chat application with theme customization, user authentication, and a modern responsive UI. Deployed live on Vercel for instant communication.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "JWT"],
-    impact: "Live deployed real-time messaging with WebSocket integration & custom themes",
-    github: "https://github.com/vrajmevawala/ChatApp",
-    live: "https://chatty-wine.vercel.app/",
-  },
-  {
-    title: "DevConnect",
-    description:
-      "A developer collaboration platform with real-time messaging, project showcasing, and a personalized developer dashboard. Built for engineers to connect, collaborate, and ship faster.",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "JWT"],
-    impact: "Real-time chat with WebSocket integration & secure JWT-based authentication",
-    github: "https://github.com/vrajmevawala/DevConnect",
-    live: "",
-  },
-  {
-    title: "EduVerse",
-    description:
-      "An education platform with Google OAuth integration, structured course management, and a modern learning interface for students and educators.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Google OAuth"],
-    impact: "Seamless Google authentication & structured learning management",
-    github: "https://github.com/vrajmevawala/eduVerse",
+      "A production-grade fleet management system with vehicle tracking, driver management, trip lifecycle, maintenance scheduling, expense tracking, analytics dashboard, and compliance monitoring — all with role-based access control.",
+    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma", "Tailwind CSS", "JWT"],
+    impact: "Full RBAC with 4 roles, analytics dashboard with ROI metrics, and automated maintenance workflows",
+    github: "https://github.com/vrajmevawala/odoo-x-vidyapith",
     live: "",
   },
   {

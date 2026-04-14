@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -14,6 +14,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import SectionReveal from "./SectionReveal";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -221,31 +222,51 @@ export default function Contact() {
                 )}
               </button>
 
-              {/* Status Messages */}
-              {status === "success" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 text-green-400"
-                >
-                  <CheckCircle className="h-4 w-4" />
-                  <span className="text-sm">
-                    Message sent successfully! I&apos;ll get back to you soon.
-                  </span>
-                </motion.div>
-              )}
-              {status === "error" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 text-red-400"
-                >
-                  <AlertCircle className="h-4 w-4" />
-                  <span className="text-sm">
-                    Something went wrong. Please try again or email me directly.
-                  </span>
-                </motion.div>
-              )}
+              {/* Floating Status Acknowledgment (Toast) */}
+              <AnimatePresence>
+                {(status === "success" || status === "error") && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50, scale: 0.9, x: "-50%" }}
+                    animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
+                    exit={{ opacity: 0, scale: 0.9, y: 20, x: "-50%" }}
+                    className={cn(
+                      "fixed bottom-8 left-1/2 z-[100] flex items-center gap-3 rounded-2xl border px-6 py-4 shadow-2xl backdrop-blur-md transition-all duration-300",
+                      status === "success"
+                        ? "border-green-500/30 bg-green-500/10 text-green-400 shadow-green-500/10"
+                        : "border-red-500/30 bg-red-500/10 text-red-400 shadow-red-500/10"
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "rounded-full p-1.5",
+                        status === "success" ? "bg-green-500/20" : "bg-red-500/20"
+                      )}
+                    >
+                      {status === "success" ? (
+                        <CheckCircle className="h-5 w-5" />
+                      ) : (
+                        <AlertCircle className="h-5 w-5" />
+                      )}
+                    </div>
+                    <div>
+                      <p className="font-semibold leading-none">
+                        {status === "success" ? "Message Sent!" : "Error Sending Message"}
+                      </p>
+                      <p className="mt-1 text-sm opacity-80">
+                        {status === "success"
+                          ? "I'll get back to you as soon as possible."
+                          : "Something went wrong. Please try again or email me directly."}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setStatus("idle")}
+                      className="ml-4 text-xs uppercase tracking-widest opacity-50 hover:opacity-100"
+                    >
+                      Dismiss
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
           </SectionReveal>
         </div>

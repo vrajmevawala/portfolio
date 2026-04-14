@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vrajmevawala.dev/sitemap.xml
+Sitemap: https://vrajmevawala.tech/sitemap.xml
